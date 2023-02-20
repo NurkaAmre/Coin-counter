@@ -65,7 +65,7 @@ group :development do
 end
 
 # Letter opener
-gem 'letter_opener', group: :development
+# gem 'letter_opener', group: :development
 
 # Add bootstrap
 gem 'bootstrap', '~> 5.2'
