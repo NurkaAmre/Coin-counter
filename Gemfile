@@ -63,3 +63,18 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+# Letter opener
+gem 'letter_opener', group: :development
+
+# Add bootstrap
+gem 'bootstrap', '~> 5.2'
+
+# Bootstrap ror form
+gem 'bootstrap_form', '~> 5.1'
+
+# Add devise
+gem 'devise'
+
+# Add cancancan
+gem 'cancancan'
