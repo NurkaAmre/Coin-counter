@@ -10,28 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_20_140302) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_145201) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "entities", force: :cascade do |t|
     t.string "name"
-    t.integer "amount", default: 0
-    t.bigint "users_id", null: false
+    t.integer "amount"
+    t.bigint "user_id", null: false
+    t.bigint "groups_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_entities_on_users_id"
+    t.index ["groups_id"], name: "index_entities_on_groups_id"
+    t.index ["user_id"], name: "index_entities_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
-    t.bigint "users_id", null: false
-    t.bigint "entities_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["entities_id"], name: "index_groups_on_entities_id"
-    t.index ["users_id"], name: "index_groups_on_users_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_140302) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "entities", "users", column: "users_id"
-  add_foreign_key "groups", "entities", column: "entities_id"
-  add_foreign_key "groups", "users", column: "users_id"
+  add_foreign_key "entities", "groups", column: "groups_id"
+  add_foreign_key "entities", "users"
+  add_foreign_key "groups", "users"
 end
