@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get 'entities/edit'
   get 'entities/update'
   get 'entities/index'
-  devise_for :users, sign_out_via: [:get, :post] 
+  devise_for :users 
   # controllers: { registrations: "users/registrations" }
-  resources :users, only: [:index, :show, :destroy] do
+  resources :users, only: [:index, :show] do
     resources :groups do
       resources :entities
     end
@@ -17,3 +17,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'groups#index'
   end
+  
