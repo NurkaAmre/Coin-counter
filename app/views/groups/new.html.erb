@@ -1,9 +1,20 @@
-<h1>New group</h1>
+<div class='container bg-dark mt-5 mb-5 row justify-content-center rounded'>
+<h1 class='text-center text-light mb-5 mt-5'>Add category</h1>
 
-<%= render "form", group: @group %>
-
-<br>
-
-<div>
-  <%= link_to "Back to groups", groups_path %>
+<%= form_with model: @group, class: "mx-auto" ,url: user_groups_path do |form| %>
+  <div class="field font-light mb-3 row justify-content-center">
+    <%= form.text_field :name, class: "form-control w-25 col-md-6", placeholder: 'Category Name', autofocus: true %>
+  </div>
+  
+  <div class="field font-light mb-3 d-flex justify-content-center mt-5 gap-3">
+    <%= form.label :Photo , class: 'text-light '%>
+    <%= form.select :icon, [['Cars', 'car.jpg'], ['Food', 'kasha.jpg'],
+                           ['Clothes', 'clothes.jpg'], ['Sweets', 'icecream.jpg'], ['Travel', 'morocco.jpg'],
+                           ['Skin care', 'perfume.jpg'], ['Kids Education', 'kidsedu.jpg'], ['Shopping', 'shoes.jpg']], autofocus: true %>
+  </div>
+  <div class="d-flex align-items-center ">
+    <%= form.submit "Save", class: "btn btn-warning m-5  mx-auto" %>
+  </div>
+<% end %>
+</div>
 </div>
