@@ -1,4 +1,11 @@
 class Group < ApplicationRecord
-  belongs_to :users
-  belongs_to :entities
+  validates :name, presence: true, length: { in: 1..15 }
+  validates :icon, presence: true, length: { in: 1..150 }
+
+  belongs_to :users, class_name: 'User', foreign_key: :user_id
+  has_many :entities, dependent: :destroy
+
+  def total_transactions
+    entities.sum(:amount)
+  end
 end
