@@ -1,14 +1,14 @@
 class EntitiesController < ApplicationController
   def new
     @entity = Entity.new
-    @group = Group.find(params[:group_id])
+    @groups = Group.all
   end
 
   def create
     @group = Group.find(params[:group_id])
       @entity = Entity.new(entity_params)
       @entity.user = current_user
-      @entity.group = @group
+      # @entity.group = @group
 
       if @entity.save
         redirect_to user_groups_path(current_user)
@@ -18,6 +18,6 @@ class EntitiesController < ApplicationController
   private
 
   def entity_params
-    params.require(:entity).permit(:name, :amount)
+    params.require(:entity).permit(:name, :amount, :group_id)
   end
 end

@@ -1,1 +1,17 @@
-<%= link_to 'New Transaction', new_user_group_entity_path(current_user, @group) %>
+<h4 class="bg-success text-center text-white pb-2"><%= @group.name %>: $<%= @group.total_transactions %></h4>
+<section>
+<% @group.entities.each do |entity| %>
+  <div class="container mb-5">
+    <div class="card p-3 my-3 rounded-0">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title"><%= entity.name %></h5>
+           <p class="card-text"><strong>$<%= entity.amount %></strong></p>
+        </div>
+        <p class="position-relative" style="top: 1em"><%= entity.updated_at.strftime('%A-%b-%Y | %H:%M:%S') %></p>
+      </div>
+    </div>
+   </div>
+<% end %>
+   <%= link_to 'New Transaction', new_user_group_entity_path(current_user, @group), class:"btn btn-success rounded-0 w-100 position-fixed bottom-0"  %>
+</section>

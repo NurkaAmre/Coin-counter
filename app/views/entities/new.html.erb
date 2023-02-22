@@ -1,17 +1,20 @@
-<div class="p-5 bg-white rounded-lg shadow">
 
-<%= form_with model: [ current_user, @group, @entity ] do |form| %>
+<section>
+  <h4 class="bg-dark text-center text-white pb-2">Add new Transaction</h4>
+  <div class="container-fluid mt-3">
+<%= form_with model: @entity, url: user_group_entities_path(user: current_user, group: @group) do |form| %>
 
-  <div class="mb-3">
-    <%= form.label :name, class: "text-lg font-medium" %>
-    <%= form.text_field :name, class: "w-full p-2 rounded-lg" %>
+  <div class="field">
+    <%= form.text_field :name, class: "rounded-0", hide_label: true, placeholder: "Transaction Name" %>
   </div>
-  <div class="mb-3">
-    <%= form.label :amount, class: "text-lg font-medium" %>
-    <%= form.number_field :amount, class: "w-full p-2 rounded-lg" %>
+  <div class="field">
+    <%= form.number_field :amount, class:"rounded-0", hide_label: true, placeholder: '$' %>
+  </div>
+  <div class="field">
+    <%= form.collection_select :group_id, @groups, :id, :name, class:"rounded-0", hide_label: true%>
   </div>
 
-<%= form.submit class: "p-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600" %>
+<%= form.submit class: "actions" %>
 <% end %>
-<%= link_to "Back", user_group_path(current_user, @group ), class: "text-lg font-medium" %>
+
 </div>
