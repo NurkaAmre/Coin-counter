@@ -6,22 +6,17 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <%# <%= link_to 'Foods', foods_path, class: 'nav-link'%> %> Category
-        </li>
+        
          <li class="nav-item">
-        <%# <%= link_to 'Recipes', recipes_path, class: 'nav-link'%>  %> Home
+        <%= link_to 'Groups', root_path, class: 'nav-link' %>
         </li>
-        <li>Profile</li>
-        <%# <li class='nav-link'>Shopping List</li> %>
+       
         <% if current_user %>
           <li class='nav-link text-white'><%= current_user.name %></li>
         <% end %>
         <li class="d-flex ml-auto mb-3 mt-2">
           <% if user_signed_in? %>
             <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-warning  text-end sign', data: { turbo: false } %>
-          <% else %>
-            <%# <%= button_to 'Sign In', new_user_session_path, class: 'btn btn-warning  text-end sign'%> 
           <% end%>
         </li>
       </ul>

@@ -1,10 +1,18 @@
-<h1>Editing entity</h1>
+<main class="body-container">
+  <section class="container">
+    <%= form_with(model: [current_user, @group, @entity], local: true) do |form| %>
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, autofocus: true %>
+      </div>
 
-<%= render "form", entity: @entity %>
+      <div class="field">
+        <%= form.label :amount %>
+        <%= form.number_field :amount %>
+      </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this entity", @entity %> |
-  <%= link_to "Back to entities", entities_path %>
-</div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+ 

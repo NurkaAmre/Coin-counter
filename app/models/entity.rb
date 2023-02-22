@@ -1,6 +1,7 @@
-class Transaction < ApplicationRecord
-  belongs_to :users, class_name: 'User', foreign_key: :user_id
-  belongs_to :groups
-  validates :name, :group, presence: true
+class Entity < ApplicationRecord
+  belongs_to :group
+  belongs_to :user, class_name: 'User'
+
+  validates :name, presence: true
   validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
 end

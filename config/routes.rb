@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   get '/home', to: 'home#index', as: 'home'
-  get 'entities/new'
-  get 'entities/destroy'
-  get 'entities/edit'
-  get 'entities/update'
-  get 'entities/index'
+  
   devise_for :users 
   # controllers: { registrations: "users/registrations" }
   resources :users, only: [:index, :show] do
