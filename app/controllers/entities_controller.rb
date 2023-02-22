@@ -6,13 +6,13 @@ class EntitiesController < ApplicationController
 
   def create
     @group = Group.find(params[:group_id])
-      @entity = Entity.new(entity_params)
-      @entity.user = current_user
-      # @entity.group = @group
+    @entity = Entity.new(entity_params)
+    @entity.user = current_user
+    # @entity.group = @group
 
-      if @entity.save
-        redirect_to user_groups_path(current_user)
-      end
+    return unless @entity.save
+
+    redirect_to user_groups_path(current_user)
   end
 
   private
