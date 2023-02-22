@@ -7,14 +7,10 @@
     <%= f.text_field :name, class: "form-control", placeholder: 'Username' %>
   </div>
 
-  <div class="field mb-3">
-    <%= f.label :photo %><br />
-    <%= f.text_field :photo, class: "form-control", placeholder: 'Add photo link...' %>
-  </div>
-
-  <div class="field mb-3">
-    <%= f.text_area :bio, class: "form-control", placeholder: 'User bio...' %>
-  </div>
+  <div class="field font-light mb-3">
+      <%= f.label :icon %><br />
+      <%= f.file_field :icon, autofocus: true %>
+    </div>
 
   <div class="field mb-3">
     <%= f.email_field :email, class: "form-control", placeholder: 'Email', autofocus: true, autocomplete: "email" %>

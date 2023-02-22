@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+#group_icon {
+    width: 250px;
+}
