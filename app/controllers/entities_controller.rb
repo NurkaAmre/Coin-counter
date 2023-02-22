@@ -1,63 +1,60 @@
-class ExpensesController < ApplicationController
-  before_action :set_expense, only: %i[edit update destroy]
-  before_action :set_group, only: %i[index new edit create update destroy]
-  before_action :set_user, only: %i[index edit create update destroy]
-  # GET /expenses or /expenses.json
+class EntitiesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_group
+  before_action :set_entity, only: %i[show edit update destroy]
+
   def index
-    @entities = @group.entities.order(created_at: :desc)
+    @header = 'Entities'
+    @group = Group.find(params[:id])
+    @entities = @group.entities.where(author: current_user).order(created_at: :desc)
   end
 
-  # GET group/expenses/new
   def new
-    @entity = Entity.new
+    @entity = @group.entities.build
   end
 
-  # GET group/expenses/1/edit
+  def create
+    @entity = @group.entities.build(entity_params)
+
+    respond_to do |format|
+      if @entity.save
+        format.html do
+          redirect_to user_group_entities_path(current_user, @group), notice: 'Entity was successfully created.'
+        end
+        format.json { render :show, status: :created, location: @entity }
+      else
+        format.html { render :new }
+        format.json { render json: @entity.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def edit; end
 
-  # POST group/expenses
-  def create
-    @entity = Entity.new(author: @users, **entity_params)
-    if @entity.save
-      @group_entity = GroupExpense.create(group: @group, entity: @entity)
-      redirect_to group_entity_url(@group), notice: 'Expense was successfully created.'
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT group/expenses/1
   def update
     if @entity.update(entity_params)
-      redirect_to group_entity_url, notice: 'Expense was successfully updated.'
+      redirect_to user_group_entities_path(@entity.group), notice: 'Entity was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
 
-  # DELETE group/expenses/1
   def destroy
     @entity.destroy
-    redirect_to group_entity_url(@group), notice: 'Expense was successfully destroyed.'
+    redirect_to user_group_entities_path(@entity.group), notice: 'Entity was successfully destroyed.'
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_user
-    @user = current_user
-  end
-
   def set_group
-    @group = set_user.groups.find(params[:group_id])
+    @group = Group.find(params[:id])
   end
 
   def set_entity
-    @entity = set_user.entities.find(params[:id])
+    @entity = Entity.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def entity_params
-    params.require(:entity).permit(:name, :amount)
+    params.require(:entity).permit(:name, :amount, :author_id)
   end
 end
