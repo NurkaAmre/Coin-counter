@@ -18,10 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_145201) do
     t.string "name"
     t.integer "amount"
     t.bigint "user_id", null: false
-    t.bigint "groups_id", null: false
+    t.bigint "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["groups_id"], name: "index_entities_on_groups_id"
+    t.index ["group_id"], name: "index_entities_on_group_id"
     t.index ["user_id"], name: "index_entities_on_user_id"
   end
 
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_145201) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "entities", "groups", column: "groups_id"
+  add_foreign_key "entities", "groups"
   add_foreign_key "entities", "users"
   add_foreign_key "groups", "users"
 end

@@ -4,9 +4,10 @@ class CreateEntities < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :amount
       t.references :user, null: false, foreign_key: true
-      t.references :groups, null: false, foreign_key: true
+      t.references :group, null: false, foreign_key: true
 
       t.timestamps
     end
   end
 end
+
