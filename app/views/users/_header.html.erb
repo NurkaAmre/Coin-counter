@@ -10,9 +10,7 @@
          <li class="nav-item">
         <%= link_to 'Groups', root_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item">
-          <%= link_to 'Entities', entities_index_path, class: 'nav-link'%> 
-        </li>
+       
         <% if current_user %>
           <li class='nav-link text-white'><%= current_user.name %></li>
         <% end %>
