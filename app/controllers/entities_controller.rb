@@ -1,40 +1,63 @@
-class EntitiesController < ApplicationController
-  before_action :authenticate_user!
-
-  # GET /entities or /entities.json
+class ExpensesController < ApplicationController
+  before_action :set_expense, only: %i[edit update destroy]
+  before_action :set_group, only: %i[index new edit create update destroy]
+  before_action :set_user, only: %i[index edit create update destroy]
+  # GET /expenses or /expenses.json
   def index
-    @entities = Entity.all
-    @group = Group.includes(:entities).find(params[:group_id])
-    @entities = @group.total_transactions
+    @entities = @group.entities.order(created_at: :desc)
   end
 
-  #def new
-  @groups = Group.where(user: current_user)
-  @entity = Entity.new
-  respond_to do |format|
-    format.html { render :new, locals: { entity: @entity } }
+  # GET group/expenses/new
+  def new
+    @entity = Entity.new
   end
-end
 
-  # POST /entities or /entities.json
+  # GET group/expenses/1/edit
+  def edit; end
+
+  # POST group/expenses
   def create
-    @entity = Entity.new(entity_params)
-
-    respond_to do |format|
-      format.html do
-        if @entity.save
-          redirect_to groups_path
-        else
-          flash.now[:error] = 'Error: Digidiktyn balasy'
-          render :new, locals: { entity: @entity }
-        end
-      end
+    @entity = Entity.new(author: @users, **entity_params)
+    if @entity.save
+      @group_entity = GroupExpense.create(group: @group, entity: @entity)
+      redirect_to group_entity_url(@group), notice: 'Expense was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  # PATCH/PUT group/expenses/1
+  def update
+    if @entity.update(entity_params)
+      redirect_to group_entity_url, notice: 'Expense was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE group/expenses/1
+  def destroy
+    @entity.destroy
+    redirect_to group_entity_url(@group), notice: 'Expense was successfully destroyed.'
   end
 
   private
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = current_user
+  end
+
+  def set_group
+    @group = set_user.groups.find(params[:group_id])
+  end
+
+  def set_entity
+    @entity = set_user.entities.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
   def entity_params
-    params.require(:entity).permit(:name, :amount, :group_id).merge(user: current_user)
+    params.require(:entity).permit(:name, :amount)
   end
 end

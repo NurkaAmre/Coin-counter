@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Entities</h1>
-
-<div id="entities">
-  <% @entities.each do |entity| %>
-    <%= render entity %>
-    <p>
-      <%= link_to "Show this entity", entity %>
-    </p>
-  <% end %>
+<h4 class="bg-success text-center text-white pb-2"><%= @group.name %>: $<%= @group.total_transactions %></h4>
 </div>
+<section>
+  <%# <div class="container mb-5">
+    <%= render partial: "transaction", collection: @transactions %>
+  <%# </div> %>
+  <%= link_to "Add New Entity", new_transaction_path, class:"btn btn-success rounded-0 w-100 position-fixed bottom-0" %>
+<section>
 
 <%= link_to "New entity", new_entity_path %>
+<div class="card p-3 my-3 rounded-0">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <h5 class="card-title"><%= entity.name %></h5>
+      <p class="card-text"><strong>$<%= entity.amount %></strong></p>
+    </div>
+    <p class="position-relative" style="top: 1em"><%= entity.updated_at.strftime('%A-%b-%Y | %H:%M:%S') %></p>
+  </div>
+</div>
