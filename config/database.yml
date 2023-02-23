@@ -83,6 +83,7 @@ test:
 production:
   <<: *default
   database: Coin_counter_production
+  host: postgresql
   username: Coin_counter
   password: <%= ENV["COIN_COUNTER_DATABASE_PASSWORD"] %>
   url: <%= ENV["DATABASE_URL"] %>
