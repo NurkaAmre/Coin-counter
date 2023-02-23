@@ -1,21 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<p style="background: lightgrey; color: green"><%= notice %></p>
 
-<div class="container bg-dark text-light rounded-top px-4 pb-2 m-5">
-  <div class="container d-flex gap-5">
+<div class="container rounded-top pb-2 mt-5 text-light", style="background-color: #3778c2;">
+  <div class="d-flex gap-5">
     <h3 class='m-3'>Welcome to Categories <span>&#x1F60A;</span></h3>
     <div class="ms-auto m-1">
-      <%= button_to "Add new category", new_user_group_path(current_user), method: :get, class: "btn btn-warning mt-10 mb-10 text-end m-3 me-auto order-last" %>
+      <%= button_to "Add new category", new_user_group_path(current_user), method: :get, class: "btn text-light m-3 me-auto order-last", style: "background-color: #5fb523;" %>
     </div>
   </div>
   <h6 class="m-3">Here is a list where we can spend our money <span>&#x1F4B0;&#x1F4B6;</span></h6><br>
   
   <% @groups.each do |group|%>
   <%= link_to user_group_path(current_user, group) do%>
-  <div class='shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-danger '>
-    <div class='card-body d-flex'>
+  <div class='shadow-lg p-3 mb-5 bg-body-tertiary '>
+    <div class='card-body d-flex justify-content-around text-decoration-none'>
+     <%= image_tag group.icon, size: '70x70', alt: 'travel' %>
       <h3 class="card-title text-decoration-none m-3 text-dark"><%= group.name %></h3> 
-      <p class="card-text"><strong>$<%= group.total_transactions %></strong></p>
-      <%= image_tag group.icon, size: '50x50', alt: 'travel' %>
+      <p class="card-text">Total amount:<strong>$<%= group.total_transactions %></strong></p>
+      <button>Delete</button>
     </div>
   </div>
    <% end %>

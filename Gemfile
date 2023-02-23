@@ -78,3 +78,6 @@ gem 'devise'
 
 # Add cancancan
 gem 'cancancan'
+
+gem 'font-awesome-sass', '~> 5.15'
+

@@ -13,6 +13,14 @@
   <div class="field">
     <%= form.collection_select :group_id, @groups, :id, :name, class:"rounded-0", hide_label: true%>
   </div>
+   <div class="field font-light mb-3 d-flex justify-content-center mt-5 gap-3">
+    <%= form.label :Photo , class: 'text-light '%>
+    <%= form.select :icon, [['Cars', 'car.jpg'], ['Food', 'kasha.jpg'],
+                           ['Clothes', 'dress.png'], ['Sweets', 'chocolate.png'], ['Game', 'game.png'],
+                           ['Skin care', 'locion.png'], ['Toys', 'kidsedu.jpg'], ['Shopping', 'tufli.png'],
+                           ['Bag', 'bag.png'], ['Shoes', 'boots.jpg'], ['flower', 'flower.png'],
+                           ['Safety', 'mask.png'], ['Hero', 'superhero.png'], ['Dance', 'puante.png']], autofocus: true %>
+  </div>
 
 <%= form.submit class: "actions" %>
 <% end %>

@@ -1,16 +1,10 @@
-<h2>Sign up</h2>
-
+<div class="container mt-5 pb-5">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field mb-3">
     <%= f.text_field :name, class: "form-control", placeholder: 'Username' %>
   </div>
-
-  <div class="field font-light mb-3">
-      <%= f.label :icon %><br />
-      <%= f.file_field :icon, autofocus: true %>
-    </div>
 
   <div class="field mb-3">
     <%= f.email_field :email, class: "form-control", placeholder: 'Email', autofocus: true, autocomplete: "email" %>
@@ -28,7 +22,8 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up", class: "btn btn-warning mt-10 mb-10" %>
+    <%= f.submit "Sign up", class: "btn  mt-10 mb-10", style: "background-color: #5fb523; width: 200px;" %>
   </div>
 <% end %>
-<%= render "devise/shared/links" %>
+
+</div>

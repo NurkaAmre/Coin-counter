@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
-#group_icon {
-    width: 250px;
+* {
+    font-family: 'ProximaBold', sans-serif;
+    src: url('ProximaNovaBold.otf');
 }
+#group_icon {
+  width: 250px;
+}
+
+.nav-item, .nav-link {
+  font-size: 1.3rem;
+}
+a {
+  text-decoration: none;
+}
+
