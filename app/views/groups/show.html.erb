@@ -1,20 +1,24 @@
-<h4 class="bg-success text-center text-white pb-2"><%= @group.name %>: $<%= @group.total_transactions %></h4>
-<section>
-<div class="d-flex justify-content-end">
-  <%= link_to "Back", user_groups_path, class: "p-2 me-5 link font-light" %>
-</div>
+<h4 class="mt-5 text-center text-light p-2 mb-5", style="background-color: #5fb523;"><%= @group.name %>: $<%= @group.total_transactions %></h4>
+<section class="mb-5">
+<%= image_tag("cate.png", alt: "Logo", size: '200x250', class: "photo1") %>
 <% @group.entities.each do |entity| %>
-  <div class="container mb-5">
-    <div class="card p-3 my-3 rounded-0">
+  <div class="container mb-5", style="width: 50%;">
+    <div class="card p-3 my-3 rounded-0 w-50%">
       <div class="card-body">
         <div class="d-flex justify-content-between">
           <h5 class="card-title"><%= entity.name %></h5>
            <p class="card-text"><strong>$<%= entity.amount %></strong></p>
         </div>
-        <p class="position-relative" style="top: 1em"><%= entity.updated_at.strftime('%A-%b-%Y | %H:%M:%S') %></p>
+        <p class="position-relative text-dark" style="top: 1em"><%= entity.updated_at.strftime('%A-%b-%Y | %H:%M:%S') %></p>
       </div>
+       <div class="position-relative">
+        <%= button_to 'Remove', user_group_path(current_user, @group), method: :delete, data: { turbo: false }, class: 'btn text-light position-a', style: "background-color: #5fb523;" %>
+        </div>
     </div>
    </div>
-<% end %>
-   <%= link_to 'New Transaction', new_user_group_entity_path(current_user, @group), class:"btn btn-success rounded-0 w-100 position-fixed bottom-0"  %>
+<% end %> 
+  <div class="d-flex justify-content-center pb-5 gap-5">
+   <%= link_to 'New Transaction', new_user_group_entity_path(current_user, @group), class:"btn btn-warning text-light"  %>
+    <%= link_to "Back", user_groups_path, class: "btn btn-warning text-light back" %>
+  </div>
 </section>
