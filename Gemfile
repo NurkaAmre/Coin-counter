@@ -80,4 +80,3 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'font-awesome-sass', '~> 5.15'
-
