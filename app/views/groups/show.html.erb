@@ -1,5 +1,8 @@
 <h4 class="bg-success text-center text-white pb-2"><%= @group.name %>: $<%= @group.total_transactions %></h4>
 <section>
+<div class="d-flex justify-content-end">
+  <%= link_to "Back", user_groups_path, class: "p-2 me-5 link font-light" %>
+</div>
 <% @group.entities.each do |entity| %>
   <div class="container mb-5">
     <div class="card p-3 my-3 rounded-0">
