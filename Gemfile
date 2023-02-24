@@ -87,11 +87,11 @@ gem 'devise'
 # Add cancancan
 gem 'cancancan'
 
-gem 'esbuild-rails', '~> 0.1.4'
-gem 'font-awesome-sass', '~> 5.15'
+# gem 'esbuild-rails', '~> 0.1.4'
+# gem 'font-awesome-sass', '~> 5.15'
 
-gem 'ffi', '~> 1.15'
+# gem 'ffi', '~> 1.15'
 
-gem 'launchy', '~> 2.5'
-gem 'rails_best_practices'
-gem 'rubocop', '>= 1.0', '< 2.0'
+# gem 'launchy', '~> 2.5'
+# gem 'rails_best_practices'
+# gem 'rubocop', '>= 1.0', '< 2.0'
