@@ -14,11 +14,12 @@
  *= require_self
  */
 * {
-    font-family: 'ProximaBold', sans-serif;
-    src: url('ProximaNovaBold.otf');
+  font-family: 'ProximaBold', sans-serif;
+  src: url('ProximaNovaBold.otf');
 }
-#group_icon {
-  width: 250px;
+
+ #group_icon {
+    width: 250px;
 }
 
 .nav-item, .nav-link {
