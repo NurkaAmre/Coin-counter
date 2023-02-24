@@ -86,4 +86,4 @@ production:
   url: <%= ENV['DATABASE_URL'] %>
   database: Coin_counter_production
   username: Coin_counter
-  password: <%= ENV['DATABASE_URL'] %>
+  password: <%= ENV["COIN_COUNTER_DATABASE_PASSWORD"] %>
