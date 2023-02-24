@@ -22,7 +22,8 @@
   width: 250px;
 }
 
-.nav-item, .nav-link {
+.nav-item,
+.nav-link {
   font-size: 1.3rem;
 }
 
