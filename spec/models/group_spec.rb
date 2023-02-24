@@ -29,7 +29,7 @@ RSpec.describe Group, type: :model do
 
   context 'Testing Associations' do
     it 'belongs_to User' do
-      assoc = Group.reflect_on_association(:users)
+      assoc = Group.reflect_on_association(:user)
       expect(assoc.macro).to eq :belongs_to
     end
 
