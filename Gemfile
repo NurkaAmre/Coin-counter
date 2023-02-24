@@ -51,6 +51,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -62,6 +63,13 @@ group :development do
   gem 'letter_opener'
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 # Letter opener
@@ -79,4 +87,11 @@ gem 'devise'
 # Add cancancan
 gem 'cancancan'
 
+gem 'esbuild-rails', '~> 0.1.4'
 gem 'font-awesome-sass', '~> 5.15'
+
+gem 'ffi', '~> 1.15'
+
+gem 'launchy', '~> 2.5'
+gem 'rails_best_practices'
+gem 'rubocop', '>= 1.0', '< 2.0'

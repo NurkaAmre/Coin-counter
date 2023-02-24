@@ -14,16 +14,19 @@
  *= require_self
  */
 * {
-    font-family: 'ProximaBold', sans-serif;
-    src: url('ProximaNovaBold.otf');
+  font-family: 'ProximaBold', sans-serif;
+  src: url('ProximaNovaBold.otf');
 }
+
 #group_icon {
   width: 250px;
 }
 
-.nav-item, .nav-link {
+.nav-item,
+.nav-link {
   font-size: 1.3rem;
 }
+
 a {
   text-decoration: none;
 }
@@ -38,7 +41,6 @@ a {
   width: 300px;
   left: 12%;
 }
-
 
 .photo1 {
   position: absolute;
@@ -55,6 +57,7 @@ a {
   right: 12%;
   z-index: 1;
 }
+
 .photo3 {
   position: absolute;
   width: 80px;
@@ -63,6 +66,7 @@ a {
   left: 8%;
   z-index: 1;
 }
+
 .position-a {
   position: absolute;
   right: 3%;
@@ -82,10 +86,12 @@ a {
     top: 70%;
     left: 2%;
     z-index: 1;
-}
+  }
+
   .photo3 {
     display: none;
-}
+  }
+
   .photo1 {
     position: absolute;
     width: 120px;
@@ -93,28 +99,29 @@ a {
     top: 60%;
     right: 8%;
     z-index: 1;
-}
+  }
 
-.photo {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  left: 8%;
-  top: 60%;
-}
+  .photo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 8%;
+    top: 60%;
+  }
 
-.w-25 {
-  width: 100%!important;
-}
-.button_to {
-  width: 200px;
-}
+  .w-25 {
+    width: 100% !important;
+  }
 
-.ml-5 {
-  font-size: 20px;
-}
+  .button_to {
+    width: 200px;
+  }
 
-.position-a {
-  width: 60px;
-}
+  .ml-5 {
+    font-size: 20px;
+  }
+
+  .position-a {
+    width: 60px;
+  }
 }
