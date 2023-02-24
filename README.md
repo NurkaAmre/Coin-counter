@@ -1,46 +1,75 @@
+<a name="readme-top"></a>
+
+<!--
+HOW TO USE:
+This is an example of how you may give instructions on setting up your project locally.
+
+Modify this file to match your project and remove sections that don't apply.
+
+REQUIRED SECTIONS:
+- Table of Contents
+- About the Project
+  - Built With
+  - Live Demo
+- Getting Started
+- Authors
+- Future Features
+- Contributing
+- Show your support
+- Acknowledgements
+- License
+
+OPTIONAL SECTIONS:
+- FAQ
+
+After you're finished please remove all the comments and instructions!
+-->
+
+<!-- TABLE OF CONTENTS -->
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    <!-- - [🚀 Live Demo](#live-demo) -->
+  - [🚀 Live Demo](#live-demo)
+  - [📷 Video Recording](#video-record)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
+  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
-<!-- - [🔭 Future Features](#future-features) -->
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
-<!-- - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq) -->
+- [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Recipe App <a name="about-project"></a>
+# 📖 Instant Budget <a name="about-project"></a>
 
-The Coin-counter is mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+Instant Budget is a mobile web application that can helps you keep track of your daily financially transaction and manage your budget where you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<!-- <details>
+<details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li>View Template Engine ".erb"</li>
   </ul>
-</details> -->
+</details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">Rails</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby On Rails</a></li>
   </ul>
 </details>
 
@@ -55,18 +84,26 @@ The Coin-counter is mobile web application where you can manage your budget: you
 
 ### Key Features <a name="key-features"></a>
 
-- **Add a category**
-- **Add a price**
-- **List the transactions**
+- **Register a new user:** a new user can register by filling out a form with specific information.
+- **User login:** a registered user can log in to the app using his credential.
+- **Create Category:** a user can create a category for his expenses.
+- **Create transaction:** a user can create a transaction that belongs to a specific category.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
- 🚀 Demo Link <a name="live-demo"></a>
-[Demo link](https://nurka.onrender.com/home)
 
-🚀 Video presentation <a name="live-demo"></a>
-[Video presentation](https://www.loom.com/share/c5ce249f5d014defa579040211dbf6c4)
+<!-- LIVE DEMO -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://nurka.onrender.com/home)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📷 Video Recording <a name="video-record"></a>
+
+- [Video Recoding me explaining the project](https://www.loom.com/share/c5ce249f5d014defa579040211dbf6c4)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -78,42 +115,31 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- Ruby should be installed.
-- You need a Terminal.
-
-Then run the command example bellow to install rails.-
-
-```sh
- gem install rails
-```
+- A Code editor such as `VsCode`.
+- A web browser.
+- Postgresql, ruby and ruby on rails should be installed on your local machine
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-Example commands:
-
 ```sh
   cd my-folder
-  git clone git@github.com:NurkaAmre/ROR-Recipe-App.git
+  git clone git@github.com:NurkaAmre/Coin-counter.git
 ```
 
 ### Install
 
 Install this project with:
 
-Example command:
-
 ```sh
-  cd rails-blog-app/
-  bundle install
+  cd Coin-counter
+  gem install
 ```
 
 ### Usage
 
 To run the project, execute the following command:
-
-Example command:
 
 ```sh
   rails server
@@ -123,25 +149,13 @@ Example command:
 
 To run tests, run the following command:
 
-Example command:
-
 ```sh
-  gem install rails rspec
-  rails spec spec/models/
+  rspec spec/
 ```
 
-<!--
-### Deployment
+### Deployment <a name="triangular_flag_on_post-deployment"></a>
 
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
+You can deploy this project using: [Render](https://render.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,16 +172,14 @@ Example:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
-<!--
+
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+- [ ] **Add categories icon:** user can choose a category icon from a list of options.
+- [ ] **Add confirmation functionality:** newly registered users can receive an email to confirm their registration.
+- [ ] **Sending email for resetting user password**
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
@@ -183,42 +195,21 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project, kindly give it a star ⭐️
+If you like this project please help it stand out by giving it a star ✨
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
-<!--
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
+- I would like to thank Microvers for providing this great opportunity and for the project guide as well 👏
+- Thanks [Gregoire Vella](https://www.behance.net/gregoirevella) for design guidelines since this project
 
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-<!-- FAQ (optional) -->
-<!--
-## ❓ FAQ <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
