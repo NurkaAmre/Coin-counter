@@ -64,7 +64,7 @@ The Coin-counter is mobile web application where you can manage your budget: you
 
  >🚀 Live Demo <a name="live-demo"></a>
 
-- [Vidoe Presentation](https://www.loom.com/share/c5ce249f5d014defa579040211dbf6c4)
+- [Video Presentation](https://www.loom.com/share/c5ce249f5d014defa579040211dbf6c4)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
