@@ -1,22 +1,29 @@
 require 'rails_helper'
 
-RSpec.describe 'Home page', type: :feature do
+RSpec.describe 'Log in', type: :feature do
   before :each do
-    visit home_path
+    @user1 = User.new(name: 'Amre', email: 'amre@gmail.com', password: 'amre12')
+    @user1.save
+    visit new_user_session_path
   end
 
-  it 'I can see the button in splash screen' do
-    expect(page).to have_link 'Sign In'
-    expect(page).to have_link 'Sign Up'
+  it 'I can see the input in login page' do
+    expect(page).to have_field 'Email'
+    expect(page).to have_field 'Password'
+    expect(page).to have_button 'Log in'
   end
 
-  it 'should be able to see login page' do
-    click_on 'Sign In'
-    expect(page).to have_current_path new_user_session_path
+  it 'should be able to see authenticated route' do
+    fill_in 'Email', with: @user1.email
+    fill_in 'Password', with: @user1.password
+    click_button 'Log in'
+    expect(page).to have_content('Welcome to Categories')
   end
 
-  it 'should be able to see sign up page' do
-    click_on 'Sign Up'
-    expect(page).to have_current_path new_user_registration_path
+  it "shouldn't be able to enter to root route" do
+    fill_in 'Email', with: 'usertest@gmail.com'
+    fill_in 'Password', with: '456789'
+    click_button 'Log in'
+    expect(page).to have_current_path(new_user_session_path)
   end
 end
