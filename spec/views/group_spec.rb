@@ -4,7 +4,7 @@ RSpec.describe 'Group page', type: :feature do
   before :each do
     @user1 = User.new(name: 'Amre', email: 'amre@gmail.com', password: 'amre12')
     @group = Group.create(user_id: @user1, name: 'Food',
-        icon: 'food.png')
+                          icon: 'food.png')
     @user1.save
     visit new_user_session_path
     fill_in 'Email', with: @user1.email
