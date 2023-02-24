@@ -51,7 +51,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Instant Budget <a name="about-project"></a>
+# 📖 Coin Counter <a name="about-project"></a>
 
 Instant Budget is a mobile web application that can helps you keep track of your daily financially transaction and manage your budget where you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
