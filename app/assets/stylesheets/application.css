@@ -85,10 +85,12 @@ a {
     top: 70%;
     left: 2%;
     z-index: 1;
-}
+  }
+
   .photo3 {
     display: none;
-}
+  }
+
   .photo1 {
     position: absolute;
     width: 120px;
@@ -96,28 +98,29 @@ a {
     top: 60%;
     right: 8%;
     z-index: 1;
-}
+  }
 
-.photo {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  left: 8%;
-  top: 60%;
-}
+  .photo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 8%;
+    top: 60%;
+  }
 
-.w-25 {
-  width: 100%!important;
-}
-.button_to {
-  width: 200px;
-}
+  .w-25 {
+    width: 100%!important;
+  }
 
-.ml-5 {
-  font-size: 20px;
-}
+  .button_to {
+    width: 200px;
+  }
 
-.position-a {
-  width: 60px;
-}
+  .ml-5 {
+    font-size: 20px;
+  }
+
+  .position-a {
+    width: 60px;
+  }
 }
