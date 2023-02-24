@@ -22,7 +22,7 @@
   width: 250px;
 }
 
-.nav-item, .nav-link {
+.nav-item,  .nav-link {
   font-size: 1.3rem;
 }
 
@@ -109,7 +109,7 @@ a {
   }
 
   .w-25 {
-    width: 100%!important;
+    width: 100% !important;
   }
 
   .button_to {
