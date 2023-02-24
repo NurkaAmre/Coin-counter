@@ -60,11 +60,13 @@ The Coin-counter is mobile web application where you can manage your budget: you
 - **List the transactions**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+ 🚀 Demo Link <a name="live-demo"></a>
+[Demo link](https://nurka.onrender.com/home)
 
-< 🚀 Video presentation <a name="live-demo"></a>
-< [Video presentation](https://www.loom.com/share/c5ce249f5d014defa579040211dbf6c4)
+🚀 Video presentation <a name="live-demo"></a>
+[Video presentation](https://www.loom.com/share/c5ce249f5d014defa579040211dbf6c4)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
 <!-- GETTING STARTED -->
 
