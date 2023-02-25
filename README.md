@@ -101,7 +101,7 @@ Instant Budget is a mobile web application that can helps you keep track of your
 
 ## 📷 Video Recording <a name="video-record"></a>
 
-- [Video Presentation](https://www.loom.com/share/c5ce249f5d014defa579040211dbf6c4)
+- [Video Presentation](https://www.loom.com/share/ab70d7ed476d48e7ae19799df9c6bb39)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
