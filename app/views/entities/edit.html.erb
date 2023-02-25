@@ -1,0 +1,18 @@
+<main class="body-container">
+  <section class="container">
+    <%= form_with(model: [current_user, @group, @entity], local: true) do |form| %>
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= form.label :amount %>
+        <%= form.number_field :amount %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+ 

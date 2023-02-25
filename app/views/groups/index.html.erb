@@ -1,0 +1,24 @@
+<p style="background: lightgrey; color: green"><%= notice %></p>
+
+<div class="container rounded-top pb-2 mt-5 text-light", style="background-color: #3778c2;">
+  <div class="d-flex gap-5">
+    <h3 class='ml-5'><span><%= image_tag("cate2.png", alt: "Logo", size: '200x250', class: "photo3") %></span>Welcome to Categories</h3>
+    <div class="ms-auto m-1">
+      <%= button_to "Add new category", new_user_group_path(current_user), method: :get, class: "btn text-light m-3 me-auto order-last", style: "background-color: #5fb523;" %>
+    </div>
+  </div>
+  <h6 class="m-3">Here is a list where we can spend our money <span>&#x1F4B0;&#x1F4B6;</span></h6><br>
+  
+  <% @groups.each do |group|%>
+  <%= link_to user_group_path(current_user, group) do%>
+  <div class='shadow-lg p-2 mb-5 bg-body-tertiary '>
+    <div class='card-body d-flex justify-content-around text-decoration-none'>
+     <%= image_tag group.icon, size: '70x70', alt: 'travel' %>
+      <h3 class="card-title text-decoration-none m-3 text-dark"><%= group.name %></h3> 
+      <p class="card-text mt-4 text-dark">Total amount: <strong>$<%= group.total_transactions %></strong></p>
+    </div>
+  </div>
+   <% end %>
+  
+  <% end %>
+</div>

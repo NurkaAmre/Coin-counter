@@ -1,0 +1,27 @@
+<div class='container mt-5 mb-5 row justify-content-center rounded pt-5 pb-5', style="background-color: #5fb523; width: 50%; margin-inline-start: 22%;">
+<%= image_tag("cate3.png", alt: "Logo", size: '200x250', class: "photo") %>
+ 
+<%= form_with model: @group, class: "mx-auto" ,url: user_groups_path do |form| %>
+  <div class="field font-light mb-3 row justify-content-center">
+    <%= form.text_field :name, class: "form-control w-25 col-md-6", placeholder: 'Category Name', autofocus: true %>
+  </div>
+  
+  <div class="field font-light mb-3 d-flex justify-content-center mt-5 gap-3">
+    <%= form.label :Photo , class: 'text-light '%>
+    <%= form.select :icon, [['Cars', 'car.jpg'], ['Food', 'kasha.jpg'],
+                           ['Clothes', 'dress.png'], ['Sweets', 'chocolate.png'], ['Game', 'game.png'],
+                           ['Skin care', 'locion.png'], ['Toys', 'kidsedu.jpg'], ['Shopping', 'tufli.png'],
+                           ['Bag', 'bag.png'], ['Shoes', 'boots.jpg'], ['flower', 'flower.png'],
+                           ['Safety', 'mask.png'], ['Hero', 'superhero.png'], ['Dance', 'puante.png']], autofocus: true %>
+  </div>
+  <div class="d-flex justify-content-center gap-5 pb-5 mt-5">
+  <div class="d-flex align-items-center ">
+    <%= form.submit "Save", class: "btn btn-warning text-light mx-auto" %>
+  </div>
+  <div class="p">
+  <%= link_to "Back", user_groups_path, class: "btn btn-warning text-light back" %>
+  </div>
+ </div>
+<% end %>
+</div>
+</div>

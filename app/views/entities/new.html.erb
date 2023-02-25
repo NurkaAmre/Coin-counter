@@ -1,0 +1,22 @@
+
+<section class='container mt-5', style="width: 50%">
+<%= image_tag("cate4.png", alt: "Logo", size: '200x250', class: "photo2") %>
+  <h4 class="bg-warning text-center text-white pb-2">Add new Transaction</h4>
+  <div class="container-fluid mt-3 ">
+<%= form_with model: @entity, url: user_group_entities_path(user: current_user, group: @group) do |form| %>
+
+  <div class="field mb-3">
+    <%= form.text_field :name, class: "form-control", hide_label: true, placeholder: "Transaction Name" %>
+  </div>
+  <div class="field mb-3">
+    <%= form.number_field :amount, class:"form-control", hide_label: true, placeholder: '$' %>
+  </div>
+  <div class="field mb-3">
+    <%= form.collection_select :group_id, @groups, :id, :name, class:"form-control", hide_label: true%>
+  </div>
+
+<%= form.submit class: "btn btn-warning mb-5 text-light" %>
+<% end %>
+
+</div>
+</section>
