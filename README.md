@@ -95,7 +95,7 @@ Instant Budget is a mobile web application that can helps you keep track of your
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://nurka.onrender.com/home)
+- [Live Demo Link](https://nurka.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
