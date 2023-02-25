@@ -8,10 +8,7 @@ class EntitiesController < ApplicationController
     @group = Group.find(params[:group_id])
     @entity = Entity.new(entity_params)
     @entity.user = current_user
-    # @entity.group = @group
-
     return unless @entity.save
-
     redirect_to user_groups_path(current_user)
   end
 
