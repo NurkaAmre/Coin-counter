@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def require_admin
     return if current_user&.admin?
+
     redirect_to root_path, alert: 'You must be an admin to access this page.'
   end
 end

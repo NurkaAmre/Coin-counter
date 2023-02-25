@@ -9,6 +9,7 @@ class EntitiesController < ApplicationController
     @entity = Entity.new(entity_params)
     @entity.user = current_user
     return unless @entity.save
+
     redirect_to user_groups_path(current_user)
   end
 
